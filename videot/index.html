@@ -1,0 +1,29 @@
+---
+layout: page
+title: Videot
+---
+
+
+{% for post in site.categories.videot %}
+<section id="news" class="container content-section">
+<div class="row">
+<div class="col-lg-4">
+<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+<p>
+Julkaistu: {{ post.date|date:"%Y-%m-%d" }}<br/>
+Kategoria: {{ post.categories }}
+</p>
+<p>
+{% for tag in post.tags %}
+<span class="btn btn-default" disabled="disabled">{{ tag }}</span>
+{% endfor %}
+</p>
+</div>
+<div class="col-lg-8">
+<iframe width="560" height="315" src="{{ post.video_url }}" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</section>
+{% endfor %}
+
+
