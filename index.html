@@ -48,10 +48,12 @@ Toimintaperiaattena on että syntyvät ratkaisut ovat kaikille (kaupalliset ja y
 
 <section id="goals" class="container content-section">
 <div class="row">
-
 <div class="col-lg-12">
 <h2>Peruskirjassa määritellyt toiminnan tavoitteet</h2>
 </div>
+</div>
+
+<div class="row">
 <div class="col-lg-4">
 <p>
 <a href="https://drive.google.com/open?id=0B506WHY4cwV1WFFvMTljdW14dE05ZmN5dUtoMVUtbl94UGNr">ECA peruskirja</a> määrittelee ECAn rakenteen ja toiminnan tavoitteet.
@@ -63,11 +65,9 @@ Toimintaperiaattena on että syntyvät ratkaisut ovat kaikille (kaupalliset ja y
 <p>
 Koska allianssiin kuuluu kattava joukko alan toimijoita, <a href="https://drive.google.com/open?id=0B506WHY4cwV1VDczekNCRkxFMWtIbG1YWGdhRmVFV1ROM1A0">Kilpailuoikeudellinen ohjeistus</a> kertoo rajoitteista, joita allianssin keskustelu noudattaa.
 </p>
-
 </div>
+
 <div class="col-lg-8">
-
-
 <ul>
 <li>Edistää opetussektorin digitalisointia ja kehitystä</li>
 <li>Edistää opetussektorin yhteistyötä avoimuuden hengessä</li>
@@ -84,7 +84,43 @@ Koska allianssiin kuuluu kattava joukko alan toimijoita, <a href="https://drive.
 </div>
 </section>
 
-<section id="foo" class="container content-section text-center">
+<section id="goals" class="container content-section">
+<div class="row">
+<div class="col-lg-12">
+<h2>Kehityksen tilanne ECA:n Github-repoissa</h2>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-4">
+<p>
+</p>
+</div>
+<div class="col-lg-8">
+
+<div class="github-issues" data-github-url="https://api.github.com/repos/educloudalliance/eca-docs/issues?state=open">
+</div>
+
+<script>
+var urlToGetAllOpenBugs = "https://api.github.com/repos/educloudalliance/eca-docs/issues?state=open";
+
+$(document).ready(function () {
+$.getJSON(urlToGetAllOpenBugs, function (allIssues) {
+    $("div").append("found " + allIssues.length + " issues</br>");
+    $.each(allIssues, function (i, issue) {
+        $("div")
+            .append("<b>" + issue.number + " - " + issue.title + "</b></br>")
+            .append(issue.body + "</br></br></br>");
+    });
+});
+});
+</script>
+
+</div>
+</div>
+</section>
+
+<section class="container content-section text-center">
 <div class="row">
 <div class="col-lg-4">
 <h2>Allianssi</h2>
@@ -97,12 +133,15 @@ Lue lisää <a href="{{ site.baseurl }}/allianssi">jäsenyydestä</a>.
 </div>
 
 <div class="col-lg-4">
-<h2>Standardi</h2>
+<h2>Työryhmät</h2>
 <p>
-
+Eri työryhmät kokoontuvat joka tiistai klo 13:00-14:00 kertomaan mitä on tapahtunut, mitä tapahtuu seuraavaksi ja mitä ongelmia on tullut vastaan. Tilaisuus on avoin kaikille ja tilaisuudet tallennetaan kaikkien saataville.
 </p>
+
 <p>
-Tutustu <a href="{{ site.baseurl }}/standardi">standardiin</a>.
+<a href="https://connect.funet.fi/educloud/" class="btn btn-default btn-lg"><i class="fa fa-phone fa-fw"></i> <span class="network-name">Viikko-palaveri</span></a>
+
+<a href="{{ site.baseurl }}/tyoryhmat" class="btn btn-default btn-lg"><i class="fa fa-microphone fa-fw"></i> <span class="network-name">Tallenteet</span></a>
 </p>
 </div>
 
@@ -115,24 +154,6 @@ Tärkeänä osana standardin määrittelyä on referenssitoteutus ja tätä vast
 <p>
 Tutustu <a href="{{ site.baseurl }}/beta">Beta-ympäristöön</a>.
 </p>
-</div>
-</div>
-</section>
-
-<section id="foo" class="container content-section text-center">
-<div class="row">
-<div class="col-lg-12">
-<h2>Työryhmät</h2>
-<p>
-Eri työryhmät kokoontuvat joka tiistai klo 13:00-14:00 kertomaan mitä on tapahtunut, mitä tapahtuu seuraavaksi ja mitä ongelmia on tullut vastaan. Tilaisuus on avoin kaikille ja tilaisuudet tallennetaan kaikkien saataville.
-</p>
-
-<p>
-<a href="https://connect.funet.fi/educloud/" class="btn btn-default btn-lg"><i class="fa fa-phone fa-fw"></i> <span class="network-name">Viikko-palaveri</span></a>
-
-<a href="{{ site.baseurl }}/tyoryhmat" class="btn btn-default btn-lg"><i class="fa fa-microphone fa-fw"></i> <span class="network-name">Tallenteet</span></a>
-</p>
-
 </div>
 </div>
 </section>
