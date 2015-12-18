@@ -38,11 +38,13 @@ $("a").mouseup(function(){
 $('.github-issues').each(function() {
   var $this = $(this);
   var githubIssuesUrl = $this.attr('data-github-url');
-
+  console.log($this);
   $.getJSON(githubIssuesUrl, function (allIssues) {
+    var foo = "<ul>";
     $.each(allIssues, function (i, issue) {
-      $this.append("<b>" + issue.number + ": " + issue.title + "</b></br>")
+      foo += "<li>" + issue.number + ": " + issue.title + "</li>"
     });
+    $this.append(foo + "</ul>");
   });
 });
 
