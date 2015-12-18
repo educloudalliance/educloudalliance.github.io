@@ -84,42 +84,6 @@ Koska allianssiin kuuluu kattava joukko alan toimijoita, <a href="https://drive.
 </div>
 </section>
 
-<section id="goals" class="container content-section">
-<div class="row">
-<div class="col-lg-12">
-<h2>Kehityksen tilanne ECA:n Github-repoissa</h2>
-</div>
-</div>
-
-<div class="row">
-<div class="col-lg-4">
-<p>
-</p>
-</div>
-<div class="col-lg-8">
-
-<div class="github-issues" data-github-url="https://api.github.com/repos/educloudalliance/eca-docs/issues?state=open">
-</div>
-
-<script>
-var urlToGetAllOpenBugs = "https://api.github.com/repos/educloudalliance/eca-docs/issues?state=open";
-
-$(document).ready(function () {
-$.getJSON(urlToGetAllOpenBugs, function (allIssues) {
-    $("div").append("found " + allIssues.length + " issues</br>");
-    $.each(allIssues, function (i, issue) {
-        $("div")
-            .append("<b>" + issue.number + " - " + issue.title + "</b></br>")
-            .append(issue.body + "</br></br></br>");
-    });
-});
-});
-</script>
-
-</div>
-</div>
-</section>
-
 <section class="container content-section text-center">
 <div class="row">
 <div class="col-lg-4">
