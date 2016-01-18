@@ -3,7 +3,7 @@ layout: page
 title: Työryhmät
 ---
 
-<section id="foo" class="container content-section">
+<section class="container content-section">
 <div class="row">
 <div class="col-lg-8">
 
@@ -80,5 +80,54 @@ Tiistaisin klo 13-14.
 </div>
 
 </div>
+</section>
+
+
+<section class="container content-section">
+<div class="row">
+<div class="col-lg-12">
+<h1>Käynnissä olevat työryhmät</h1>
+</div>
+</div>
+
+{% for p in site.tyoryhmat %}{% if p.active != false %}
+<div class="row">
+<div class="col-lg-4">
+<h2>{{ p.title }}</h2>
+<p>{{ p.begin }} - {{ p.end }}</p>
+{% if p.more_info %}<p><a href="{{ p.more_info.url }}">{{ p.more_info.title }}</a></p>{% endif %}
+</div>
+
+<div class="col-lg-8">
+{{ p.output }}
+</div>
+
+</div>
+<hr />
+{% endif %}{% endfor %}
+</section>
+
+<section class="container content-section">
+<div class="row">
+<div class="col-lg-12">
+<h1>Työnsä lopettaneet työryhmät</h1>
+</div>
+</div>
+
+{% for p in site.tyoryhmat %}{% if p.active == false %}
+<div class="row">
+<div class="col-lg-4">
+<h2>{{ p.title }}</h2>
+<p>{{ p.begin }} - {{ p.end }}</p>
+{% if p.more_info %}<p><a href="{{ p.more_info.url }}">{{ p.more_info.title }}</a></p>{% endif %}
+</div>
+
+<div class="col-lg-8">
+{{ p.output }}
+</div>
+
+</div>
+<hr />
+{% endif %}{% endfor %}
 </section>
 
