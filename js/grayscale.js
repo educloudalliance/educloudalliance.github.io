@@ -42,7 +42,7 @@ $('.github-issues').each(function() {
   $.getJSON(githubIssuesUrl, function (allIssues) {
     var foo = "<ul>";
     $.each(allIssues, function (i, issue) {
-      foo += "<li>" + issue.number + ": " + issue.title + "</li>"
+      foo += "<li><a href=\""+ issue.html_url +"\">" + issue.number + ": " + issue.title + "</a></li>"
     });
     $this.append(foo + "</ul>");
   });
